@@ -149,7 +149,9 @@ foreach ($this->data['groups'] as $group) {
 		array(
 			array(new CLink(_('Templates'), 'templates.php?groupid='.$group['groupid'], 'unknown'), ' ('.$templateCount.')'),
 			BR(),
-			array(new CLink(_('Hosts'), 'hosts.php?groupid='.$group['groupid']), ' ('.$hostCount.')')
+			array(new CLink(_('Hosts'), 'hosts.php?groupid='.$group['groupid']), ' ('.$hostCount.')'),
+			BR(),
+			array(new CLink(_('Hosts'), 'custom/cluster.topological.php?groupid='.$group['groupid']), ' ('.$hostCount.')'),
 		),
 		new CCol(empty($hostsOutput) ? '-' : $hostsOutput, 'wraptext'),
 		($showStatus) ? $status : null
