@@ -39,6 +39,9 @@ $nameTextBox = new CTextBox('name', $this->data['name'], ZBX_TEXTBOX_STANDARD_SI
 $nameTextBox->attr('autofocus', 'autofocus');
 $hostGroupFormList->addRow(_('Group name'), $nameTextBox);
 
+$commentCTextArea = new CTextArea();
+$hostGroupFormList->addRow(_('描述'), $commentCTextArea);
+
 // append groups and hosts to form list
 $groupsComboBox = new CComboBox('twb_groupid', $this->data['twb_groupid'], 'submit()');
 $groupsComboBox->addItem('0', _('All'));
@@ -60,7 +63,8 @@ foreach ($this->data['r_hosts'] as $host) {
 		$hostsComboBox->addItem($host['hostid'], $host['name'], true, false);
 	}
 }
-$hostGroupFormList->addRow(_('Hosts'), $hostsComboBox->get(_('Hosts in'), array(_('Other hosts | Group').SPACE, $groupsComboBox)));
+
+//$hostGroupFormList->addRow(_('Hosts'), $hostsComboBox->get(_('Hosts in'), array(_('Other hosts | Group').SPACE, $groupsComboBox)));
 
 // append tabs to form
 $hostGroupTab = new CTabView();
