@@ -22,6 +22,39 @@
 global $ZBX_MENU;
 
 $ZBX_MENU = array(
+	//start moidfy by wziyong
+	'cm' => array(
+		'label'				    => _('Cluster'),
+		'user_type'			=> USER_TYPE_ZABBIX_USER,
+		'node_perm'			=> PERM_READ,
+		'default_page_id'	=> 0,
+		'pages' => array(
+			array(
+				'url' => 'hostgroups.php',
+				'label' => _('Host groups')
+			),
+			array(
+				'url' => 'hosts.php',
+				'label' => _('Hosts'),
+				'sub_pages' => array(
+					'items.php',
+					'triggers.php',
+					'graphs.php',
+					'applications.php',
+					'tr_logform.php',
+					'tr_testexpr.php',
+					'popup_trexpr.php',
+					'host_discovery.php',
+					'disc_prototypes.php',
+					'trigger_prototypes.php',
+					'host_prototypes.php',
+					'httpconf.php',
+					'popup_httpstep.php'
+				)
+			)
+		)
+	),
+	//end moidfy by wziyong
 	'view' => array(
 		'label'				=> _('Monitoring'),
 		'user_type'			=> USER_TYPE_ZABBIX_USER,
@@ -68,15 +101,15 @@ $ZBX_MENU = array(
 			),
 			array(
 				'url' => 'screens.php',
-				'label' => _('Screens'),
+				'label' => _('ScreensView'),
 				'sub_pages' => array('slides.php')
 			),
+			/*
 			array(
 				'url' => 'maps.php',
 				'label' => _('Maps'),
 				'sub_pages' => array('map.php')
 			),
-			/*
 			array(
 				'url' => 'discovery.php',
 				'label' => _('Discovery'),
@@ -154,39 +187,7 @@ $ZBX_MENU = array(
 		),
 	),
 	*/
-	//start moidfy by wziyong
-	'cm' => array(
-		'label'				    => _('Cluster'),
-		'user_type'			=> USER_TYPE_ZABBIX_USER,
-		'node_perm'			=> PERM_READ,
-		'default_page_id'	=> 0,
-		'pages' => array(
-			array(
-				'url' => 'hostgroups.php',
-				'label' => _('Host groups')
-			),
-			array(
-				'url' => 'hosts.php',
-				'label' => _('Hosts'),
-				'sub_pages' => array(
-					'items.php',
-					'triggers.php',
-					'graphs.php',
-					'applications.php',
-					'tr_logform.php',
-					'tr_testexpr.php',
-					'popup_trexpr.php',
-					'host_discovery.php',
-					'disc_prototypes.php',
-					'trigger_prototypes.php',
-					'host_prototypes.php',
-					'httpconf.php',
-					'popup_httpstep.php'
-				)
-			)
-		)
-	),
-	//end moidfy by wziyong
+
 
 	'config' => array(
 		'label'				=> _('Configuration'),
@@ -213,6 +214,10 @@ $ZBX_MENU = array(
 				'label' => _('Actions')
 			),
 			array(
+				'url' => 'media_types.php',
+				'label' => _('Media types')
+			),
+			array(
 				'url' => 'screenconf.php',
 				'label' => _('Screens'),
 				'sub_pages' => array('screenedit.php')
@@ -222,13 +227,12 @@ $ZBX_MENU = array(
 				'url' => 'slideconf.php',
 				'label' => _('Slide shows'),
 			),
-			*/
+
 			array(
 				'url' => 'sysmaps.php',
 				'label' => _('Maps'),
 				'sub_pages' => array('image.php', 'sysmap.php')
 			),
-			/*
 			array(
 				'url' => 'discoveryconf.php',
 				'label' => _('Discovery')
@@ -278,11 +282,7 @@ $ZBX_MENU = array(
 				'url' => 'usergrps.php',
 				'label' => _('Users'),
 				'sub_pages' => array('users.php', 'popup_usrgrp.php')
-			),
-			array(
-				'url' => 'media_types.php',
-				'label' => _('Media types')
-			),
+			)
 			/*
 			array(
 				'url' => 'scripts.php',
@@ -301,11 +301,11 @@ $ZBX_MENU = array(
 				'url' => 'report4.php',
 				'label' => _('Notifications')
 			),
-			*/
+
 			array(
 				'url' => 'setup.php',
 				'label' => _('Installation')
-			)
+			)*/
 		)
 	),
 	'login' => array(

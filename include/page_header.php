@@ -110,7 +110,7 @@ switch ($page['type']) {
 		if (isset($ZBX_SERVER_NAME) && !zbx_empty($ZBX_SERVER_NAME)) {
 			$pageTitle = $ZBX_SERVER_NAME.NAME_DELIMITER;
 		}
-		$pageTitle .= isset($page['title']) ? $page['title'] : _('Zabbix');
+		$pageTitle .= isset($page['title']) ? $page['title'] : _('OnceMon');
 
 		if (ZBX_DISTRIBUTED) {
 			if (isset($ZBX_VIEWED_NODES) && $ZBX_VIEWED_NODES['selected'] == 0) { // all selected
@@ -319,18 +319,20 @@ if (!defined('ZBX_PAGE_NO_MENU')) {
 		$oncemon_name = new CLink($ZBX_SERVER_NAME, '#', 'small_font', null, null);
 	}
 
-	$help = new CLink(_('Help'), 'http://www.iscas.ac.cn/', 'small_font', null, 'nosid');
-	$help->setTarget('_blank');
+	//$help = new CLink(_('Help'), 'http://www.iscas.ac.cn/', 'small_font', null, 'nosid');
+	//$help->setTarget('_blank');
 
-	$printview = new CLink(_('Print'), '', 'small_font print-link', null, 'nosid');
+	//$printview = new CLink(_('Print'), '', 'small_font print-link', null, 'nosid');
 
-	$page_header_r_col = array($oncemon_name, '|', $help, '|', $printview, '|');
+	//$page_header_r_col = array($oncemon_name, '|', $help, '|', $printview, '|');
+	//É¾³ýmenu£ºhelp¡¢debug¡¢
+	$page_header_r_col = array($oncemon_name, '|');
 
 	if (!CWebUser::isGuest()) {
 		array_push($page_header_r_col, new CLink(_('Profile'), 'profile.php', 'small_font', null, 'nosid'), '|');
 	}
 
-	if (isset(CWebUser::$data['debug_mode']) && CWebUser::$data['debug_mode'] == GROUP_DEBUG_MODE_ENABLED) {
+	/*if (isset(CWebUser::$data['debug_mode']) && CWebUser::$data['debug_mode'] == GROUP_DEBUG_MODE_ENABLED) {
 		$debug = new CLink(_('Debug'), '#debug', 'small_font', null, 'nosid');
 		$d_script = " if (!isset('state', this)) { this.state = 'none'; }".
 			" if (this.state == 'none') { this.state = 'block'; }".
@@ -338,7 +340,7 @@ if (!defined('ZBX_PAGE_NO_MENU')) {
 			" showHideByName('zbx_debug_info', this.state);";
 		$debug->setAttribute('onclick', 'javascript: '.$d_script);
 		array_push($page_header_r_col, $debug, '|');
-	}
+	}*/
 
 	if (CWebUser::isGuest()) {
 		$page_header_r_col[] = array(new CLink(_('Login'), 'index.php?reconnect=1', 'small_font', null, null));
@@ -418,10 +420,10 @@ if (!defined('ZBX_PAGE_NO_MENU')) {
 	$menu_divs[] = $sub_menu_div;
 	$search_div = null;
 
-	if ($page['file'] != 'index.php' && CWebUser::$data['userid'] > 0) {
+	/*if ($page['file'] != 'index.php' && CWebUser::$data['userid'] > 0) {
 		$searchForm = new CView('general.search');
 		$search_div = $searchForm->render();
-	}
+	}*/
 
 	$sub_menu_table->addRow(array($menu_divs, $search_div));
 	$page_menu->addItem($sub_menu_table);
