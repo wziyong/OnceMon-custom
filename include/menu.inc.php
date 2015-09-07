@@ -51,6 +51,10 @@ $ZBX_MENU = array(
 					'httpconf.php',
 					'popup_httpstep.php'
 				)
+			),
+			array(
+				'url' => 'custom.hostgroups.php',
+				'label' => _('拓扑图')
 			)
 		)
 	),

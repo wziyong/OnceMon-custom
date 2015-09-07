@@ -147,7 +147,7 @@ foreach ($this->data['groups'] as $group) {
 		$this->data['displayNodes'] ? $group['nodename'] : null,
 		$name,
 		array(
-			array(new CLink(_('拓扑图'), 'custom/cluster.topological.php?groupid='.$group['groupid'])),
+			array(new CLink(_('拓扑图'), 'topological.php?groupid='.$group['groupid'])),
 			new CSpan('&nbsp;&nbsp;&nbsp;&nbsp;'),
 			array(new CLink(_('Templates'), 'templates.php?groupid='.$group['groupid'], 'unknown'), ' ('.$templateCount.')'),
 			new CSpan('&nbsp;&nbsp;&nbsp;&nbsp;'),

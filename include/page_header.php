@@ -325,7 +325,7 @@ if (!defined('ZBX_PAGE_NO_MENU')) {
 	//$printview = new CLink(_('Print'), '', 'small_font print-link', null, 'nosid');
 
 	//$page_header_r_col = array($oncemon_name, '|', $help, '|', $printview, '|');
-	//É¾³ımenu£ºhelp¡¢debug¡¢
+	//É¾ï¿½ï¿½menuï¿½ï¿½helpï¿½ï¿½debugï¿½ï¿½
 	$page_header_r_col = array($oncemon_name, '|');
 
 	if (!CWebUser::isGuest()) {
@@ -422,6 +422,8 @@ if (!defined('ZBX_PAGE_NO_MENU')) {
 
 	/*if ($page['file'] != 'index.php' && CWebUser::$data['userid'] > 0) {
 		$searchForm = new CView('general.search');
+
+
 		$search_div = $searchForm->render();
 	}*/
 
