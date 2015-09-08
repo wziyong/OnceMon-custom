@@ -28,8 +28,8 @@
 
             option = {
                 title : {
-                    text: '树图',
-                    subtext: '虚构数据'
+                    text: '集群',
+                    subtext: '集群拓扑机构图'
                 },
                 toolbox: {
                     show : true,
@@ -48,7 +48,7 @@
                         type:'tree',
                         orient: 'vertical',  // vertical horizontal
                         rootLocation: {x: 'center',y: 50}, // 根节点位置  {x: 100, y: 'center'}
-                        nodePadding: 1,
+                        nodePadding: 50,
                         itemStyle: {
                             normal: {
                                 label: {
@@ -76,68 +76,100 @@
                             {
                                 name: '根节点',
                                 value: 6,
+                                symbolSize: [80, 16],
+                                symbol: 'image://http://localhost/custom/nginx.png',
                                 children: [
                                     {
                                         name: '节点1',
                                         value: 4,
+                                        symbolSize: [80, 16],
+                                        symbol: 'image://http://localhost/custom/nginx.png',
                                         children: [
                                             {
                                                 name: '叶子节点1',
-                                                value: 4
+                                                value: 4,
+                                                symbolSize: [40, 28],
+                                                symbol: 'image://http://localhost/custom/tomcat.png',
                                             },
                                             {
                                                 name: '叶子节点2',
-                                                value: 4
+                                                value: 4,
+                                                symbolSize: [40, 28],
+                                                symbol: 'image://http://localhost/custom/tomcat.png',
                                             },
                                             {
                                                 name: '叶子节点3',
-                                                value: 2
+                                                value: 2,
+                                                symbolSize: [40, 28],
+                                                symbol: 'image://http://localhost/custom/tomcat.png',
                                             },
                                             {
                                                 name: '叶子节点4',
-                                                value: 2
+                                                value: 2,
+                                                symbolSize: [40, 28],
+                                                symbol: 'image://http://localhost/custom/tomcat.png',
                                             },
                                             {
                                                 name: '叶子节点5',
-                                                value: 2
+                                                value: 2,
+                                                symbolSize: [40, 28],
+                                                symbol: 'image://http://localhost/custom/tomcat.png',
                                             },
                                             {
                                                 name: '叶子节点6',
-                                                value: 4
+                                                value: 4,
+                                                symbolSize: [40, 28],
+                                                symbol: 'image://http://localhost/custom/tomcat.png',
                                             }
                                         ]
                                     },
                                     {
                                         name: '节点2',
                                         value: 4,
+                                        symbolSize: [80, 16],
+                                        symbol: 'image://http://localhost/custom/nginx.png',
                                         children: [{
                                             name: '叶子节点7',
-                                            value: 4
+                                            value: 4,
+                                            symbolSize: [40, 28],
+                                            symbol: 'image://http://localhost/custom/tomcat.png',
                                         },
                                             {
                                                 name: '叶子节点8',
-                                                value: 4
+                                                value: 4,
+                                                symbolSize: [40, 28],
+                                                symbol: 'image://http://localhost/custom/tomcat.png',
                                             }]
                                     },
                                     {
                                         name: '节点3',
                                         value: 1,
+                                        symbolSize: [80, 16],
+                                        symbol: 'image://http://localhost/custom/nginx.png',
                                         children: [
                                             {
                                                 name: '叶子节点9',
-                                                value: 4
+                                                value: 4,
+                                                symbolSize: [40, 28],
+                                                symbol: 'image://http://localhost/custom/tomcat.png',
                                             },
                                             {
                                                 name: '叶子节点10',
-                                                value: 4
+                                                value: 4,
+                                                symbolSize: [40, 28],
+                                                symbol: 'image://http://localhost/custom/tomcat.png',
                                             },
                                             {
                                                 name: '叶子节点11',
-                                                value: 2
+                                                value: 2,
+                                                symbolSize: [40, 28],
+                                                symbol: 'image://http://localhost/custom/tomcat.png',
                                             },
                                             {
                                                 name: '叶子节点12',
-                                                value: 2
+                                                value: 2,
+                                                symbolSize: [40, 28],
+                                                symbol: 'image://http://localhost/custom/tomcat.png',
                                             }
                                         ]
                                     }
